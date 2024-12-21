@@ -19,7 +19,7 @@ def safe_scrape():
 def start_scheduler():
     """Inicia el scheduler en un hilo en segundo plano con manejo de errores y configuración."""
     logger.info("Iniciando el scheduler...")
-
+    
     schedule_times = os.environ.get("SCHEDULE_TIMES", "08:00,20:00").split(",")
     for time_str in schedule_times:
         try:
