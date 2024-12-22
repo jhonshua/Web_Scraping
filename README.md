@@ -1,4 +1,5 @@
-##  titulo: Web Scraping
+#  titulo: 
+## Web Scraping
 
 ![Texto alternativo](assets/fastApi.png)
 
@@ -46,33 +47,36 @@
 
     uvicorn main:app --reload
 
-Estructura de carpetas propuesta:
+## Estructura de carpetas propuesta:    
 
 
-├── .env            # variebles 
-├── README.md           # instrucciones y inf de la api
-├── LICENSE             # licencia de la api
-├── requirements.txt.py # las dependencias
-├── main.py             # arranca la api
-├── dockerfile          # define como construir la imagen para la api
-├── .gitignore          # Especifica los archivos y carpetas que no deben ser versionados
-├── api.code-workspacee # Configuración para un entorno de desarrollo integrado (IDE) específico
-├── .dockerignore       # Similar a .gitignore, pero para Docker
-├── utils/              # Funciones utilitarias generales
-│   ├── scraping.py     # Funciones relacionadas con el scraping
-│   └── scheduler.py    # Funciones relacionadas con la programación de tareas
-├── templates/          #
-│   ├── email_templete/ # 
-│   └── generic_templete/   #  
-├── schemas/       # Definiciones de esquemas Pydantic
-├── routes/        # Definiciones de las rutas de la API
-├── models/        # Definiciones de modelos de base de datos (si los usas)
-├── middleware/    # Middleware de la aplicación
-├── env/           # Archivos de configuración de entorno
-├── test/          # pruebas unitarias de las api
-├── controllers/   # Lógica de negocio (controladores)
-├── config/         # Lógica de negocio (controladores)
-└── ...
+A brief description of what this project does and who it's for
+
+├── .env                # variebles           
+├── README.md           # instrucciones y inf de la api                                          
+├── LICENSE             # licencia de la api                                           
+├── requirements.txt.py # las dependencias                     
+├── main.py             # arranca la api                                                           
+├── dockerfile          # define como construir la imagen para la api        
+├── .gitignore          # archivos y carpetas que no deben serversionados           
+├── api.code-workspacee # Configuración para un entorno de desarrollo integrado (IDE)         
+├── .dockerignore       # Similar a .gitignore, pero para Docker          
+├── utils/              # Funciones utilitarias generales           
+│   ├── scraping.py     # Funciones relacionadas con el scraping       
+│   └── scheduler.py    # Funciones relacionadas con la programación de tareas      
+├── templates/          #        
+│   ├── email_templete/ #           
+│   └── generic_templete/   #        
+├── schemas/       # Definiciones de esquemas Pydantic       
+├── routes/        # Definiciones de las rutas de la API         
+├── models/        # Definiciones de modelos de base de datos (si los usas)         
+├── middleware/    # Middleware de la aplicación            
+├── env/           # Archivos de configuración de entorno         
+├── test/          # pruebas unitarias de las api           
+├── controllers/   # Lógica de negocio (controladores)        
+├── config/         # Lógica de negocio (controladores)            
+└── ...                 
+    
 
 ## Clonar:
 
