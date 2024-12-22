@@ -1,5 +1,7 @@
 ##  titulo: Web Scraping
 
+![Texto alternativo](assets/fastApi.png)
+
 * Extrayendo datos de Amazon con Selenium | Web Scraping | FastApi
 
 * Esta API utiliza técnicas de scraping para obtener información relevante de Airbnb y ponerla a disposición de los usuarios.
@@ -12,6 +14,9 @@
 * BeautifulSoup
 * Docker
 
+![Texto alternativo](assets/jinja2.png)
+
+![Texto alternativo](assets/postgre.png)
 
 ## Instalacion:
 
