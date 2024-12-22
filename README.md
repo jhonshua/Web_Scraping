@@ -50,8 +50,6 @@
 ## Estructura de carpetas propuesta:    
 
 
-A brief description of what this project does and who it's for
-
 ├── .env                # variebles           
 ├── README.md           # instrucciones y inf de la api                                          
 ├── LICENSE             # licencia de la api                                           
@@ -76,7 +74,7 @@ A brief description of what this project does and who it's for
 ├── controllers/   # Lógica de negocio (controladores)        
 ├── config/         # Lógica de negocio (controladores)            
 └── ...                 
-    
+
 
 ## Clonar:
 
