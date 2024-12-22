@@ -15,6 +15,9 @@ Estructura de carpetas propuesta:
 ├── utils/         # Funciones utilitarias generales
 │   ├── scraping.py   # Funciones relacionadas con el scraping
 │   └── scheduler.py # Funciones relacionadas con la programación de tareas
+├── templates/       #
+│   ├── email_templete/   # 
+│   └── generic_templete/ #  
 ├── schemas/       # Definiciones de esquemas Pydantic
 ├── routes/        # Definiciones de las rutas de la API
 ├── models/        # Definiciones de modelos de base de datos (si los usas)
