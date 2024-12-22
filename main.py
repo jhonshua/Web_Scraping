@@ -1,12 +1,22 @@
-from contextlib import asynccontextmanager
-from fastapi import FastAPI,  Request
-from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
-from fastapi.middleware.cors import CORSMiddleware
-from utils.scheduler import start_scheduler
-import logging  # Importamos logging en main.py
-from dotenv import load_dotenv
+#importaciones
+import logging
 import os
+from contextlib import asynccontextmanager
+
+from dotenv import load_dotenv
+from fastapi import FastAPI as FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.templating import Jinja2Templates
+
+from config.db_config import engine
+from models.rol import rol_model
+from models.user import user_model
+from utils.scheduler import start_scheduler
+
+
+#Creamos las tablas en la base de datos (si no existen)
+user_model.Base.metadata.create_all(bind=engine)
+rol_model.Base.metadata.create_all(bind=engine)
 
 # Obtener el logger específico para main.py
 logger = logging.getLogger(__name__)
@@ -21,8 +31,10 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
+# Obtener el contenido del archivo .env
 load_dotenv() 
 
+#orígenes permitidos
 CORS_ORIGINS = os.getenv('CORS_ORIGINS')
 
 #Lista de orígenes permitidos (ajústala según tus necesidades)
@@ -38,16 +50,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Obtener los templates genericos 
 templates = Jinja2Templates(directory="templates")
 
-#Incluimos las rutas relacionadas 
-
+#repuesta para rutas no declaradas
 @app.exception_handler(404)
 async def custom_404_handler(request: Request, exc):
     return templates.TemplateResponse("generic_template/404.html", {"request": request})
 
+#Incluimos las rutas relacionadas 
 
-# app.include_router(user_routes.router, prefix="/users", tags=["users"])
-# app.include_router(auth_routes.router, prefix="/auth", tags=["auth"])
-# app.include_router(rol_routes.router, prefix="/roles", tags=["roles"])
-# app.include_router(data_scraping_routes.router, prefix="/dataScraping", tags=["dataScraping"])
+
+
