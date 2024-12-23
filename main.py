@@ -13,6 +13,8 @@ from models.rol import rol_model
 from models.user import user_model
 from utils.scheduler import start_scheduler
 
+from routes.user import user_routes
+from routes.rol import rol_routes
 
 #Creamos las tablas en la base de datos (si no existen)
 user_model.Base.metadata.create_all(bind=engine)
@@ -59,6 +61,9 @@ async def custom_404_handler(request: Request, exc):
     return templates.TemplateResponse("generic_template/404.html", {"request": request})
 
 #Incluimos las rutas relacionadas 
+
+app.include_router(rol_routes.router, prefix="/roles", tags=["roles"])
+app.include_router(user_routes.router, prefix="/users", tags=["users"])
 
 
 

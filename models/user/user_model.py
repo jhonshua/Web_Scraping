@@ -1,4 +1,4 @@
-from sqlalchemy import  Column, ForeignKey, Integer, String, Text
+from sqlalchemy import  Column, ForeignKey, Integer, String, BIGINT
 from config.db_config import Base  # Assuming your declarative base class is here
 
 class User(Base):
@@ -9,6 +9,6 @@ class User(Base):
     username = Column(String, unique=True, index=True)
     email = Column(String, unique=True, index=True)
     password = Column(String)
-    phone = Column(Integer)  
+    phone = Column(BIGINT)  # Correcto: BIGINT en el modelo
     rol_id = Column(Integer, ForeignKey("roles.id")) 
     
