@@ -123,8 +123,7 @@ async def update_single_user(user_id: int, body_data= Body(...), db: Session = D
                 'email': user.email,
                 'password': user.password,
                 'phone': user.phone,
-                'status': user.phone,
-                'rol_id': user.rol_id,
+                'rol_id': user.rol_id
             }
         ]
         

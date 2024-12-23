@@ -5,7 +5,7 @@ from typing import Optional, Generic, TypeVar
 
 T = TypeVar('T')
 
-class ResponseAuth(GenericModel, Generic[T]):
+class ResponseAuth(BaseModel):
     code: str
     status: str
     message: str
